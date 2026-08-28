@@ -96,10 +96,10 @@ export default function Sidebar({
           },
         },
         {
-          label: "Sales Invoices",
+          label: "Sales",
           onClick: () => {
             setActiveApp("Sales");
-            setActiveMenuItem("Sales Invoices");
+            setActiveMenuItem("Sales");
           },
         },
         {

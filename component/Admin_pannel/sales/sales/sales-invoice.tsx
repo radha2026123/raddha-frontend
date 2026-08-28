@@ -21,6 +21,7 @@ import { DataAttributes, SaleInvoiceInputValues } from "./interface";
 import { TopSaleInvoiceFieldsForms } from "./dataform";
 import * as Yup from "yup";
 import { useGetRawMaterialss } from "../../master/raw-materials/tanstack-function";
+import { useGetCustomer } from "../customer/tanstack-function";
 
 // Separate component for Purchase Invoices Tab
 export default function SalesInvoicesComponent() {
@@ -32,6 +33,12 @@ export default function SalesInvoicesComponent() {
   const { data: SaleInvoiceData, isLoading: isSaleInvoiceLoading } =
     useGetSaleInvoice();
   const SaleInvoiceGetData = SaleInvoiceData?.data || [];
+
+
+  //Customer
+    const { data: GetCustomerData, isLoading: isGetCustomerLoading } =
+      useGetCustomer();
+
   //POST dATA
   const { createSalesInvoice } = useSaleInvoiceMutations({
     onSuccess: (data) => {
@@ -69,18 +76,29 @@ export default function SalesInvoicesComponent() {
     );
   }, [SaleInvoiceGetData, searchQuery]);
   // Get Raw Materials Data
-  const { data: RawMeterialData, isLoading: isFetching } =
-    useGetRawMaterialss();
-  const RawMeterial = RawMeterialData?.data || [];
-  const productTypeOptions = useMemo(() => {
-    return RawMeterial.map((item: any) => ({
-      label: item.name, // Display name in dropdown
-      value: item.id, // Store ID as value
-    }));
-  }, [RawMeterial]);
+  // const { data: RawMeterialData, isLoading: isFetching } =
+  //   useGetRawMaterialss();
 
-  const dynamicBottomInvoiceForm: FieldConfig[] = useMemo(
-    () => [
+
+  const CustomersOptions = useMemo(() => {
+    return GetCustomerData?.data.map((item: any) => ({
+      label: item.name, // Display name in dropdown
+      value: item.customer_id, // Store ID as value
+    }));
+  }, [GetCustomerData?.data]);
+
+  const updatedFields = TopSaleInvoiceFieldsForms.map((field) => {
+  if (field.name === "customerId") {
+    return {
+      ...field,
+      options: CustomersOptions, // ✅ inject here
+    };
+  }
+  return field;
+})
+
+  const dynamicBottomInvoiceForm: FieldConfig[] = 
+     [
       {
         name: "productId",
         label: "Product Code",
@@ -92,7 +110,10 @@ export default function SalesInvoicesComponent() {
         label: "Product Type",
         type: "select",
         storeLabel: true,
-        options: productTypeOptions,
+        options: [
+          {label:"Nail",value:"NAIL"},
+           {label:"Fencing",value:"FENCING"},
+        ],
       },
       {
         name: "size",
@@ -126,9 +147,9 @@ export default function SalesInvoicesComponent() {
         calc: { percentageOf: "total" }, // auto 5% GST for example
         validation: Yup.number().min(0).required("Tax Amount is Required"),
       },
-    ],
-    [productTypeOptions]
-  );
+    ]
+    
+
 
   const columns: Column<DataAttributes>[] = [
     {
@@ -159,8 +180,10 @@ export default function SalesInvoicesComponent() {
   ];
 
   const handleCreateSubmit = (values: Record<string, any>) => {
+      console.log("customerId raw value:", values.customerId); // 👈 check this first
+
     const PayLoad = {
-      customerId: selectedRow?.customer.customer_id,
+      customerId: values.customerId,
       invoiceNumber: values.invoiceNumber,
       invoiceDate: values.invoiceDate,
       dueDate: values.dueDate,
@@ -175,7 +198,6 @@ export default function SalesInvoicesComponent() {
       })),
     };
 
-    console.log("Payload sent to API:", PayLoad);
     createSalesInvoice(PayLoad as SaleInvoiceInputValues);
   };
 
@@ -204,7 +226,7 @@ export default function SalesInvoicesComponent() {
           }}
           className="bg-orange-500 text-white hover:bg-orange-600 h-12 px-6 rounded-md shadow-md"
         >
-          Create Sales Invoice
+          Create Sales 
         </Button>
        
         </div>
@@ -255,7 +277,7 @@ export default function SalesInvoicesComponent() {
           <DynamicArrayForm
             title="Invoice Form"
             arrayFieldName="details"
-            topFields={TopSaleInvoiceFieldsForms}
+            topFields={updatedFields}
                   topContainerClassName="grid grid-cols-2 md:grid-cols-8 gap-x-4 gap-y-4 p-4 rounded-xl border border-gray-200 bg-gray-50/50"
 
             initialValues={{

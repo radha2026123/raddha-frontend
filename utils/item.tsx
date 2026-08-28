@@ -74,7 +74,7 @@ export const menuContent: Record<string, React.ReactNode> = {
   Machines: <MachinesComponent />,
   "Production Batch": <ProductionBatchComponent />,
   Customer: <Customer />,
-  "Sales Invoices": <SalesInvoicesComponent />,
+  "Sales": <SalesInvoicesComponent />,
   "Sales Receipt": <SalesReceiptComponent />,
   Forms: <div className="text-7xl font-bold">Forms</div>,
   "Price List": <PriceListComponent />,

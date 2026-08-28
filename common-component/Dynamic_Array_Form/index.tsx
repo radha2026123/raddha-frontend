@@ -208,9 +208,9 @@ function ComboboxField({
       {open && (
         <ul className="absolute z-50 mt-1 w-full max-h-52 overflow-y-auto rounded-lg border border-gray-200 bg-white shadow-lg text-sm">
           {filtered.length > 0 ? (
-            filtered.map((opt) => (
+            filtered.map((opt,index) => (
               <li
-                key={opt.value}
+    key={opt.value != null && opt.value !== "" ? opt.value : index}
                 onMouseDown={() => handleSelect(opt)}
                 className={
                   "px-3 py-2 cursor-pointer hover:bg-orange-50 hover:text-orange-600 transition-colors " +

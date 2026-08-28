@@ -94,4 +94,8 @@ export const useGetPurchaseInvoicePaymentSettlement = () => {
 export const downloadVoucher = (paymentId: string) =>
   `${API_RADDHA_URL.payment}/download-voucher/${paymentId}`;
 export const downloadDocumnetPath = (rawMaterId: string) => 
-  `${API_RADDHA_URL.rawMaterialReceipt}/download/${rawMaterId}`;
+  `${API_RADDHA_URL.rawMaterialReceipt}/generate/${rawMaterId}`;
+
+export const generateMaterialReceiptPayment = (id:string)=>{
+ return `${API_RADDHA_URL.rawMaterialReceipt}/generate/${id}`;
+}

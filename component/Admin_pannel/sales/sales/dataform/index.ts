@@ -1,13 +1,19 @@
 import { FieldConfig } from "@/common-component/Dynamic_Array_Form";
 
 export const TopSaleInvoiceFieldsForms: FieldConfig[] = [
+   {
+    name: "customerId",
+    label: "Customer Name",
+    type: "select",
+    options:[]
+  },
   {
     name: "invoiceNumber",
     label: "Invoice Number",
     type: "text",
   },
   {
-    name: "productionDate",
+    name: "invoiceDate",
     label: "Invoice Date",
     type: "date",
   },

@@ -12,7 +12,6 @@ import { formloginFields, initialValues } from "../data";
 import { validationSignSchema } from "../validation";
 import FormikController from "@/component/formik-controller";
 import { Form, Formik } from "formik";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useState, useEffect } from "react";
 import { RippleWaveButton } from "@/component/ripple-button/RippleButton";
 import { AuthLogoHeader } from "@/common-component/auth-logo-header";
