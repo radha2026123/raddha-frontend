@@ -1,6 +1,6 @@
 import { use } from "react";
 
-export const Raddha_Backend_API = process.env.API;
+export const Raddha_Backend_API ='https://radha-backend-m45k.onrender.com/api/v1';
 
 const API_RADDHA_URL = {
   //auth management
