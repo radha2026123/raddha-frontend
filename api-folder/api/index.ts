@@ -1,6 +1,6 @@
 import { use } from "react";
 
-export const Raddha_Backend_API = process.env.NEXT_PUBLIC_API_EndPoints;
+export const Raddha_Backend_API = process.env.API;
 
 const API_RADDHA_URL = {
   //auth management
