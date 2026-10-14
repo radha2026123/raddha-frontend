@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useRouter, usePathname } from "next/navigation";
 
-const navItems = ["Home", "About", "Products", "Contact Us", "Blog"];
+const navItems = ["Home", "About", "Products","Blog"];
 
 export default function Header() {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function Header() {
     if (pathname === "/") return "Home";
     if (pathname === "/about") return "About";
     if (pathname === "/products") return "Products";
-    if (pathname === "/contact") return "Contact Us";
+    // if (pathname === "/contact") return "Contact Us";
     if (pathname === "/blog") return "Blog";
     return "";
   };
@@ -49,7 +49,7 @@ export default function Header() {
       Home: "/",
       About: "/about",
       Products: "/products",
-      "Contact Us": "/contact",
+      // "Contact Us": "/contact",
       Blog: "/blog",
     };
 

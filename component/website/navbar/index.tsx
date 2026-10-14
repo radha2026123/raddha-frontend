@@ -72,7 +72,7 @@ export default function HeroPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&q=80')",
+              "url('/fence2.jpeg')",
           }}
         />
       </AnimatePresence>

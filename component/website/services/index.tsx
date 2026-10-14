@@ -72,7 +72,7 @@ const ServicesSection = () => {
           <div className="absolute bottom-5 left-5 w-20 h-20 bg-orange-100 rounded-full -z-10 animate-pulse-slow"></div>
 
           <Image
-            src="/Beautiful Dzong.jpg"
+            src="/fence5.jpeg"
             alt="Professional Service"
             width={600}
             height={400}

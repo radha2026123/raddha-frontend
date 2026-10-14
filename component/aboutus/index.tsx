@@ -25,7 +25,7 @@ interface AboutSectionProps {
   description: string;
   features: FeatureCard[];
   checklist: string[];
-  buttonText: string;
+  buttonText?: string;
 }
 
 const badgeVariant: Variants = {
@@ -160,13 +160,15 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         </ul>
 
         {/* Button */}
-        <motion.button
+    {buttonText &&(
+          <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition"
         >
           {buttonText}
         </motion.button>
+    )}
       </motion.div>
     </section>
   );

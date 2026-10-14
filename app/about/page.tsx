@@ -2,8 +2,8 @@
 "use client";
 
 import Footer from "@/component/footer/footer";
-import MissionVisionComponent from "./component/body/mission-vision-tab";
 import ImageComponent from "./component/headerImage";
+import MissionVisionComponent from "./component/body/MissionVisionComponent";
 
 
 export default function AboutUsComponent() {

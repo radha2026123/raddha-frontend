@@ -32,9 +32,9 @@ export default function Footer() {
 
         {/* Useful Links */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Useful Links</h3>
+          <h3 className="text-white font-semibold mb-4">Navbar</h3>
           <ul className="space-y-2 text-sm">
-            {["About us", "Careers", "News & Articles", "Legal Notice"].map((item, i) => (
+            {["About us", "Products", "Blog", ].map((item, i) => (
               <li key={i}>
                 <Link href="#" className="hover:text-orange-400 transition">
                   {item}
@@ -48,7 +48,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold mb-4">Support</h3>
           <ul className="space-y-2 text-sm">
-            {["Help Center", "Contact Us", "Payment Center", "Parent Community"].map((item, i) => (
+            {["About Us", "Contact Us",].map((item, i) => (
               <li key={i}>
                 <Link href="#" className="hover:text-orange-400 transition">
                   {item}
@@ -68,17 +68,17 @@ export default function Footer() {
           <div className="space-y-3 text-sm">
             <div className="flex items-center gap-3">
               <MapPin size={16} className="text-orange-500" />
-              <span>3557 Derek Drive, Florida</span>
+              <span>Damdum industrial park Samts,Bhutan</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Phone size={16} className="text-orange-500" />
-              <span>+1(456)657-887, 01 2599 12</span>
+              <span>+975 17449338 / +975 77 51 55 55 </span>
             </div>
 
             <div className="flex items-center gap-3">
               <Mail size={16} className="text-orange-500" />
-              <span>info@domain.com</span>
+              <span>nailmanufacturing55@gmail.com</span>
             </div>
           </div>
         </div>
