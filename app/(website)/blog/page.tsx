@@ -11,23 +11,23 @@ import { ArrowRight, ArrowUpRight, Menu } from "lucide-react";
 const topStories = [
   {
     id: 1,
-    title: "Mountains and Boat: A Perfect Harmony",
-    category: "Nature",
-    image: "/1ParoDzong.jpg",
+    title: "Choosing the Right Nails for a Lasting Wooden Fence",
+    category: "Materials",
+    image: "/fence5.jpeg",
     readTime: "4 min",
   },
   {
     id: 2,
-    title: "Unveiling the Timeless Charm of Old Street Buildings",
-    category: "Architecture",
-    image: "/1ParoDzong.jpg",
+    title: "Galvanized vs. Stainless Steel Nails: Which Resists Rust Better?",
+    category: "Hardware",
+    image: "/fence4.jpeg",
     readTime: "6 min",
   },
   {
     id: 3,
-    title: "Whispering Trees and the Enchanting Moon",
-    category: "Travel",
-    image: "/1ParoDzong.jpg",
+    title: "Fence Installation Basics: Spacing, Posts, and Nailing Patterns",
+    category: "How-To",
+    image: "/fence3.jpeg",
     readTime: "5 min",
   },
 ];
@@ -35,24 +35,24 @@ const topStories = [
 const featuredCards = [
   {
     id: 1,
-    image: "/1ParoDzong.jpg",
+    image: "/fence.jpeg",
     author: "Candice Wu",
     date: "15 Jan 2022",
-    category: "Urban",
-    title: "The Pulse of the City Unfolds on the Fast Lanes",
+    category: "Fencing",
+    title: "Building a Fence That Stands Strong Against Wind and Weather",
     excerpt:
-      "Embark on an exhilarating ride through the bustling urban highways and city lights.",
+      "Learn how nail length, post depth, and proper spacing work together to keep your fence secure for years.",
     readTime: "5 min read",
   },
   {
     id: 2,
-    image: "/1ParoDzong.jpg",
+    image: "/fence2.jpeg",
     author: "Alec Whitten",
     date: "17 Jan 2022",
-    category: "Science",
-    title: "A Cosmic Adventure Underneath the Starlit Canopy",
+    category: "Nails",
+    title: "Ring Shank, Common, or Finish: A Practical Guide to Fence Nails",
     excerpt:
-      "Explore the mysteries of the cosmos and the beauty of the night sky.",
+      "Understand the main nail types, what each is best for, and how to pick the right size for your fence boards.",
     readTime: "7 min read",
   },
 ];
@@ -69,7 +69,7 @@ export default function BlogPage() {
         <article className="">
           <div className="overflow-hidden  mb-6 group">
             <Image
-              src="/1ParoDzong.jpg"
+              src="/fence4.jpeg"
               alt="Featured story"
               width={500}
               height={80}

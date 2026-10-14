@@ -23,10 +23,10 @@ export type TeamMember = {
 export type ContactItemData = {
   icon: LucideIcon;
   label: string;
-  value: string;
+  value?: string;
   href?: string;
+  values?: { text: string; href?: string }[];
 };
-
 export const features: Feature[] = [
   {
     icon: DollarSign,
@@ -62,7 +62,7 @@ export const teamMembers: TeamMember[] = [
 export const owner = {
   ...teamMembers[0],
   email: "nailmanufacturing55@gmail.com",
-  phone: "+975 17449338 / +975 77 51 55 55 ",
+  phones: ["+975 17449338", "+975 77 51 55 55"],
   address: "Damdum industrial park,Samtse, Bhutan",
 };
 
@@ -73,18 +73,18 @@ export const contactItems: ContactItemData[] = [
     value: owner.email,
     href: `mailto:${owner.email}`,
   },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: owner.phone,
-    href: `tel:${owner.phone.replace(/\s/g, "")}`,
-  },
+{
+  icon: Phone,
+  label: "Phone",
+  values: owner.phones.map((p) => ({
+    text: p,
+    href: `tel:${p.replace(/\s/g, "")}`,
+  })),
+},
   { icon: MapPin, label: "Address", value: owner.address },
 ];
 
 export const aboutImages = {
-  office:
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80",
-  video:
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+  office: "/fence5.jpeg",
+  video: "/fence2.jpeg",
 };

@@ -19,6 +19,7 @@ export default function MissionVisionComponent() {
 
       <IntroSection />
       <FeaturesSection />
+      <MediaSection />
       <TeamSection />
       <ContactSection />
     </div>
